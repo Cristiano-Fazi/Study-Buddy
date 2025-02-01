@@ -50,7 +50,6 @@ def gen_ai_call(model, text):
     to_return = {
             'content' : strip_thinking(response['message']['content']),
         }
-    
 
     return to_return
 
