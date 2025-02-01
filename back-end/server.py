@@ -10,7 +10,7 @@ def read_root():
     return {"message": "Welcome to the Study Buddy API!"}
 
 @app.get("/youtube/{subject}/")
-def youtube_endpoint(subject: str, years_ago: Optional[int] = None):
+def youtube_endpoint(subject: str):
     """
     Endpoint to search YouTube videos by subject.
     - `subject`: Subject of video to search for.
@@ -18,7 +18,7 @@ def youtube_endpoint(subject: str, years_ago: Optional[int] = None):
     return study_fetch.search_youtube(subject=subject)
 
 @app.get("/youtube/{subject}/{years_ago}/")
-def youtube_endpoint(subject: str, years_ago: Optional[int] = None):
+def youtube_endpoint(subject: str, years_ago: int):
     """
     Endpoint to search YouTube videos by subject.
     - `subject`: Subject of video to search for.
@@ -46,7 +46,7 @@ def youtube_endpoint(subject: str, years_ago: int, max_results: int):
     return study_fetch.search_youtube(subject=subject, years_ago=years_ago, max_results=max_results)
 
 @app.get("/practice/{subject}/")
-def practice_endpoint(subject: str, years_ago: Optional[int] = None):
+def practice_endpoint(subject: str):
     """
     Searches the internet for PDF's relating to the given subject
     - `subject`: Subject of practice to search for.
@@ -54,7 +54,7 @@ def practice_endpoint(subject: str, years_ago: Optional[int] = None):
     return study_fetch.search_practice_problems(subject=subject)
 
 @app.get("/practice/{subject}/{years_ago}/")
-def practice_endpoint(subject: str, years_ago: Optional[int] = None):
+def practice_endpoint(subject: str, years_ago: int):
     """
     Searches the internet for PDF's relating to the given subject
     - `subject`: Subject of practice to search for.
@@ -63,7 +63,7 @@ def practice_endpoint(subject: str, years_ago: Optional[int] = None):
     return study_fetch.search_practice_problems(subject=subject, years_ago=years_ago)
 
 @app.get("/practice/{subject}/{years_ago}/{max_results}/")
-def practice_endpoint(subject: str, years_ago: Optional[int] = None, max_results: Optional[int] = None):
+def practice_endpoint(subject: str, years_ago: int, max_results: int):
     """
     Searches the internet for PDF's relating to the given subject
     - `subject`: Subject of practice to search for.
