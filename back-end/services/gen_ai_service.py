@@ -51,13 +51,12 @@ def gen_ai_call(text):
     )
 
     to_return = {
-            'content' : strip_thinking(response['message']['content']),
-        }
+        'content' : strip_thinking(response['message']['content']),
+    }
 
     return to_return
 
 async def gen_ai_call_async(subject):
-    
     response = await AsyncClient().chat(
         models[0],
         messages = messages + 
