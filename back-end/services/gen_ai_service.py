@@ -56,7 +56,8 @@ def gen_ai_call(model, text):
 
 def gen_ai_loop(model):
     while True:
-        message = input("What would you like to ask the generative AI model? To quit type /quit \n")
+        # "What would you like to ask the generative AI model? To quit type /quit \n"
+        message = input()
         if message == '/quit':
             break
         gen_ai_call(model, message)
