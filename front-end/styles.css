@@ -18,6 +18,7 @@ body {
     text-transform: uppercase;
     font-size: 4rem;
     letter-spacing: 2px;
+
     border-bottom: 2px solid #9e9d9f; /* Continuous white line across the header */
 }
 
@@ -48,7 +49,7 @@ body {
     width: 70%;
     margin: 150px auto;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0px;
     text-align: left;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -104,9 +105,9 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: 2px solid #000000; /* Consistent border with input */
+    border: 1px solid #282828; /* Consistent border with input */
     background-color: #4A5A40;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
