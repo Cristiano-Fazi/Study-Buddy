@@ -18,7 +18,7 @@ Screenshots/figma designs
 
 ## 🔜 Next Steps
 - Custom Characters:
-- Progression ChART (Showing strengths and weaknesses)
+- Progression Chart (Showing strengths and weaknesses)
 
 ## 🧭 User Guide
 How to use the tool
