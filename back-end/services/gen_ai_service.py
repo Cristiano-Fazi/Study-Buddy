@@ -1,6 +1,9 @@
 from ollama import chat
 from ollama import ChatResponse
 from ollama import create
+from ollama import AsyncClient
+import asyncio
+
 
 models = ['deepseek-r1:7b']
 current_chat = chat(models[0], messages=[])
@@ -52,6 +55,29 @@ def gen_ai_call(model, text):
         }
 
     return to_return
+
+async def gen_ai_call_async(model, text):
+    
+    response = await AsyncClient().chat(
+        model,
+        messages = messages + 
+        [
+            {
+                'role': 'user', 
+                'content': text
+            }
+        ],
+    )
+
+    to_return = {
+            'content' : strip_thinking(response['message']['content']),
+        }
+
+    return to_return
+
+# asyncio.run(gen_ai_call_async('deepseek-r1:7b', ""))
+
+
 
 def gen_ai_loop(model):
     while True:
