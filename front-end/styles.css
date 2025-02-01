@@ -93,3 +93,19 @@ body {
     width: 50px;
     height: 50px;
 }
+
+/* Style for the background text */
+.background-text {
+    position: fixed; /* Fixes the div in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Places it behind other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem; /* Large text size */
+    color: rgba(0, 0, 0, 0.1); /* Light color for subtle effect */
+    pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
