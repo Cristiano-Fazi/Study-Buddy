@@ -37,10 +37,10 @@ def strip_thinking(text):
     # If we get to the end return text, this should never happen.
     return text
 
-def gen_ai_call(model, text):
+def gen_ai_call(text):
 
     response = chat(
-        model,
+        models[0],
         messages = messages + 
         [
             {
@@ -56,15 +56,15 @@ def gen_ai_call(model, text):
 
     return to_return
 
-async def gen_ai_call_async(model, text):
+async def gen_ai_call_async(subject):
     
     response = await AsyncClient().chat(
-        model,
+        models[0],
         messages = messages + 
         [
             {
                 'role': 'user', 
-                'content': text
+                'content': "Please breifly explain the following subject:" + subject
             }
         ],
     )
