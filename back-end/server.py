@@ -1,58 +1,44 @@
 from fastapi import FastAPI
-from googleapiclient.discovery import build
-from datetime import datetime, timedelta
+from services.search_service import StudyFetchService
 from typing import Optional
 
 app = FastAPI()
-YOUTUBE_API_KEY = 'AIzaSyDrUt7hEEmzXQ3wTlgZ2H3Epp57bVWPhbQ'#Old Key
-YOUTUBE_API_KEY = 'AIzaSyA6jqg8S-vvwbvnJCGyv7-n6al0qC6W8jQ'
+study_fetch = StudyFetchService()
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello, FastAPI!"}
+    return {"message": "Welcome to the Study Buddy API!"}
 
-@app.get("/dummy")
-def dummy_endpoint():
-    return {"message": "This is a dummy endpoint"}
+
+@app.get("/youtube/{subject}/")
+def youtube_endpoint(subject: str, years_ago: Optional[int] = None):
+    """
+    Endpoint to search YouTube videos by subject.
+    - `subject`: Subject of video to search for.
+    """
+    return study_fetch.search_youtube(subject=subject)
 
 @app.get("/youtube/{subject}/{years_ago}/")
 def youtube_endpoint(subject: str, years_ago: Optional[int] = None):
+    """
+    Endpoint to search YouTube videos by subject.
+    - `subject`: Subject of video to search for.
+    - `years_ago`: Max amount of years ago the video could have been published.
+    """
     if years_ago is not None and years_ago < 0:
         return {"error": "years_ago must be a positive integer or null"}
     
-    return search_youtube(subject, years_ago=years_ago)
+    return study_fetch.search_youtube(subject=subject, years_ago=years_ago)
 
-
-def search_youtube(subject, years_ago: Optional[int] = None, max_results: Optional[int] = None):
-    youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
-
-    published_after = None
-    if years_ago is not None:
-        past_date = datetime.utcnow() - timedelta(days=years_ago * 365)
-        published_after = past_date.strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    # Prepare request parameters
-    request_params = {
-        "q": subject,
-        "part": "snippet",
-        "type": "video",
-        "maxResults": max_results,
-        "order": "date"  # Newest videos first
-    }
-
-    if published_after:
-        request_params["publishedAfter"] = published_after
-
-    request = youtube.search().list(**request_params)
-    response = request.execute()
-
-    results = [
-        {
-            "title": item["snippet"]["title"],
-            "url": f"https://www.youtube.com/watch?v={item['id']['videoId']}",
-            "published_at": item["snippet"]["publishedAt"]
-        }
-        for item in response.get("items", [])
-    ]
-
-    return results
+@app.get("/youtube/{subject}/{years_ago}/{max_results}")
+def youtube_endpoint(subject: str, years_ago: int, max_results: int):
+    """
+    Endpoint to search YouTube videos by subject.
+    - `subject`: Subject of video to search for.
+    - `years_ago`: Max amount of years ago the video could have been published.
+    - `max_results`: The number of videos that will be returned.
+    """
+    if years_ago is not None and years_ago < 0:
+        return {"error": "years_ago must be a positive integer or null"}
+    
+    return study_fetch.search_youtube(subject=subject, years_ago=years_ago, max_results=max_results)
