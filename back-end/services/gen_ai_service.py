@@ -1,6 +1,9 @@
 from ollama import chat
 from ollama import ChatResponse
 from ollama import create
+from ollama import AsyncClient
+import asyncio
+
 
 models = ['deepseek-r1:7b']
 current_chat = chat(models[0], messages=[])
@@ -34,10 +37,10 @@ def strip_thinking(text):
     # If we get to the end return text, this should never happen.
     return text
 
-def gen_ai_call(model, text):
+def gen_ai_call(text):
 
     response = chat(
-        model,
+        models[0],
         messages = messages + 
         [
             {
@@ -50,9 +53,30 @@ def gen_ai_call(model, text):
     to_return = {
         'content' : strip_thinking(response['message']['content']),
     }
-    
 
     return to_return
+
+async def gen_ai_call_async(subject):
+    response = await AsyncClient().chat(
+        models[0],
+        messages = messages + 
+        [
+            {
+                'role': 'user', 
+                'content': "Please breifly explain the following subject:" + subject
+            }
+        ],
+    )
+
+    to_return = {
+            'content' : strip_thinking(response['message']['content']),
+        }
+
+    return to_return
+
+# asyncio.run(gen_ai_call_async('deepseek-r1:7b', ""))
+
+
 
 def gen_ai_loop(model):
     while True:

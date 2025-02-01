@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from services.search_service import StudyFetchService
 from typing import Optional
+from services.gen_ai_service import gen_ai_call_async
+import asyncio
 
 app = FastAPI()
 study_fetch = StudyFetchService()
@@ -77,3 +79,12 @@ def practice_endpoint(subject: str, years_ago: int, max_results: int):
         return {"error": "max_results must be a positive integer or null"}
 
     return study_fetch.search_practice_problems(subject=subject, years_ago=years_ago, max_results=max_results)
+
+# Text will be too long no?
+@app.get("/chat/{subject}")
+def ai_chat_endpoint(subject: str):
+    """
+    Generates an explanation of what the subject is using generative AI.
+    - `subject`: Subject to be explained.
+    """
+    return asyncio.run(gen_ai_call_async(subject))
