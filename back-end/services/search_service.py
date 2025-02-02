@@ -40,7 +40,7 @@ class StudyFetchService:
             "part": "snippet",
             "type": "video",
             "maxResults": max_results or NUMBER_OF_RESULTS,
-            "video_length": video_duration,
+            "videoDuration": video_duration,
             "order": "relevance",
             "relevanceLanguage": "en",
         }
