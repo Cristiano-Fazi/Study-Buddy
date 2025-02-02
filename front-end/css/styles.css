@@ -114,6 +114,13 @@ body {
     background-color: white; /* White background on hover */
     color: #4A5A40; /* Sage green text on hover */
 }
+.cat-icon {
+    position: absolute;
+    right: 0;    
+    bottom: 0;  
+    width: 100px;  
+    height: auto;  
+}
 
 /* Mascot */
 .mascot {
@@ -153,6 +160,7 @@ body {
     height: auto;
     
 }
+
 
 .slider {
     width: 80%;
