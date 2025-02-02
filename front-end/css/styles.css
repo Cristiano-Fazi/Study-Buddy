@@ -141,7 +141,13 @@ body {
     pointer-events: none; /* Ensures it doesn't interfere with clicks */
 }
 
-
+.slider {
+    width: 75%;
+    height: 25px;
+    background: #06c98f;
+    outline: none;
+    opacity: 0.7;
+  }
 
 /*
 
