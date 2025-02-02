@@ -1,11 +1,13 @@
 const BASE_URL = 'http://127.0.0.1:8000/'; // Adjust base URL if necessary
 
 // Function to fetch YouTube videos by subject
-export async function fetchYouTubeVideos(subject, yearsAgo = null, maxResults = null) {
+export async function fetchYouTubeVideos(subject, yearsAgo = null, maxResults = null, video_length = null) {
     let url = `${BASE_URL}youtube/${subject}/`;
 
-    if (yearsAgo !== null && maxResults !== null) {
-        url = `${BASE_URL}youtube/${subject}/${yearsAgo}/${maxResults}/`;
+    if (yearsAgo !== null && maxResults !== null && video_length !== null) {
+        url = `${BASE_URL}youtube/${subject}/${yearsAgo}/${video_length}/${maxResults}/`;
+    } if (yearsAgo !== null && video_length !== null) {
+        url = `${BASE_URL}youtube/${subject}/${yearsAgo}/${video_length}/`;
     } else if (yearsAgo !== null) {
         url = `${BASE_URL}youtube/${subject}/${yearsAgo}/`;
     }

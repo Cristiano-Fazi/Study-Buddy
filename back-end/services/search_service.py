@@ -13,16 +13,26 @@ SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 DEFAULT_RESULTS = 5
 DEFAULT_YEARS_AGO = 10
+DEFAULT_VIDEO_LENGTH = 21
 
 class StudyFetchService:
     def __init__(self):
         self.youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
 
-    def search_youtube(self, subject: str, years_ago: int = DEFAULT_YEARS_AGO, max_results: int = DEFAULT_RESULTS):
+    def search_youtube(self, subject: str, years_ago: int = DEFAULT_YEARS_AGO, max_results: int = DEFAULT_RESULTS, video_length: int = DEFAULT_VIDEO_LENGTH):
         published_after = None
         if years_ago is not None: #Converts number of years into youtube API Format (ISO 8601)
             past_date = datetime.utcnow() - timedelta(days=years_ago * 365)
             published_after = past_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        # Determine the video duration filter
+        video_duration = None
+        if video_length <= 4:  # Short videos (less than 4 minutes)
+            video_duration = "short"
+        elif video_length > 4 and video_length < 20:  # Medium videos (4 to 20 minutes)
+            video_duration = "medium"
+        else:  # Long videos (more than 20 minutes)
+            video_duration = "long"
 
         # Prepare request parameters
         request_params = {
@@ -30,6 +40,7 @@ class StudyFetchService:
             "part": "snippet",
             "type": "video",
             "maxResults": max_results or NUMBER_OF_RESULTS,
+            "video_length": video_duration,
             "order": "relevance",
             "relevanceLanguage": "en",
         }
