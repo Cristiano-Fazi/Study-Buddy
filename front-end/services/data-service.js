@@ -39,3 +39,23 @@ export async function fetchPracticeProblems(subject, yearsAgo = null, maxResults
         throw error; // Handle error or rethrow
     }
 }
+
+// Function to fetch exams by subject
+export async function fetchPreviousExams(subject, yearsAgo = null, maxResults = null) {
+    let url = `${BASE_URL}exam/${subject}/`;
+
+    if (yearsAgo !== null && maxResults !== null) {
+        url = `${BASE_URL}exam/${subject}/${yearsAgo}/${maxResults}/`;
+    } else if (yearsAgo !== null) {
+        url = `${BASE_URL}exam/${subject}/${yearsAgo}/`;
+    }
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data; // Return data for further use
+    } catch (error) {
+        console.error("Error fetching practice problems:", error);
+        throw error; // Handle error or rethrow
+    }
+}
