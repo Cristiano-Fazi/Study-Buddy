@@ -61,9 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    console.log("Chat were in")
     fetchAIResponse(info).then((response) => {
-        console.log(response);
-        console.log("Chat we out")
+        console.log(response.content);
     });
 });
