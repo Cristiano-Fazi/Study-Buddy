@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    
     fetchAIResponse(info).then((response) => {
         document.getElementById("ai_text_result").textContent = response.content
     });
