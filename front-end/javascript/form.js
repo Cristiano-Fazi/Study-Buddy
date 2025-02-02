@@ -1,8 +1,7 @@
-
+import { fetchYouTubeVideos, fetchPracticeProblems, fetchPreviousExams } from '../services/data-service.js';
 
 document.getElementById("request").addEventListener("submit", function(event){
     event.preventDefault();
-    console.log('HIIIIIII :3')
     let checkedBoxes = [];
 
     if(document.getElementById("videos").checked){
@@ -11,8 +10,8 @@ document.getElementById("request").addEventListener("submit", function(event){
     if(document.getElementById("exams").checked){
         checkedBoxes.push("exams");
     }
-    if(document.getElementById("lecture-notes").checked){
-        checkedBoxes.push("lecture-notes");
+    if(document.getElementById("practice-problems").checked){
+        checkedBoxes.push("practice-problems");
     }
     
     //slidebar values if applicable
@@ -26,6 +25,21 @@ document.getElementById("request").addEventListener("submit", function(event){
     console.log(checkedBoxes);
     console.log(info);
 
+    if(checkedBoxes.includes("video")){
+        fetchYouTubeVideos(info, year).then((response) =>
+            console.log(response)
+        );
+    }
+
+    if(checkedBoxes.includes("exams")){
+        fetchPreviousExams(info, year).then((response) =>
+            console.log(response)
+        );
+    }
+
+    if(checkedBoxes.includes("practice-problems")){
+        fetchPracticeProblems(info, year).then((response) =>
+            console.log(response)
+        );
+    }
 })
-
-

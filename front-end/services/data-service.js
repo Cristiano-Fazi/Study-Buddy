@@ -1,4 +1,4 @@
-const BASE_URL = '/http://127.0.0.1:8000/'; // Adjust base URL if necessary
+const BASE_URL = 'http://127.0.0.1:8000/'; // Adjust base URL if necessary
 
 // Function to fetch YouTube videos by subject
 export async function fetchYouTubeVideos(subject, yearsAgo = null, maxResults = null) {
@@ -11,6 +11,7 @@ export async function fetchYouTubeVideos(subject, yearsAgo = null, maxResults = 
     }
 
     try {
+        console.log(url);
         const response = await fetch(url);
         const data = await response.json();
         return data; // Return data for further use
