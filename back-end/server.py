@@ -2,10 +2,19 @@ from fastapi import FastAPI
 from services.search_service import StudyFetchService
 from typing import Optional
 from services.gen_ai_service import gen_ai_call_async
+from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 
 app = FastAPI()
 study_fetch = StudyFetchService()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins, or specify your frontend URL here
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 @app.get("/")
 def read_root():

@@ -1,14 +1,18 @@
 import requests
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+import os
 
-# API Keys (Store securely in env variables for production)
-GOOGLE_API_KEY = "AIzaSyA6jqg8S-vvwbvnJCGyv7-n6al0qC6W8jQ"
-SEARCH_ENGINE_ID = "f1933b0266ecd41d3"
-YOUTUBE_API_KEY = 'AIzaSyA6jqg8S-vvwbvnJCGyv7-n6al0qC6W8jQ'
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch API Keys from environment variables
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 DEFAULT_RESULTS = 5
 DEFAULT_YEARS_AGO = 10
-
 
 class StudyFetchService:
     def __init__(self):
@@ -36,7 +40,6 @@ class StudyFetchService:
         request = self.youtube.search().list(**request_params)
         response = request.execute()
 
-        #print(response)
         results = [
             {
                 "title": item["snippet"]["title"],
@@ -68,7 +71,6 @@ class StudyFetchService:
         ]
 
     def search_exams(self, subject: str,years_ago: int = DEFAULT_YEARS_AGO, max_results: int = DEFAULT_RESULTS):
-        # Search query: Includes subject, problem types, and filters for PDFs & educational sites
         query = f"{subject} (previous midterm exams OR final exams OR practice exams) filetype:pdf site:.edu OR site:khanacademy.org OR site:ocw.mit.edu"
         
         # Google Custom Search API URL
