@@ -26,10 +26,15 @@ document.getElementById("request").addEventListener("submit", function(event){
     console.log(info);
 
     if(checkedBoxes.includes("video")){
-        fetchYouTubeVideos(info, year).then((response) =>
-            //Alyssa Code
-            console.log(response)
-        );
+        fetchYouTubeVideos(info, year).then((response) =>{
+            //make a for loop to go through all the results and print them a certain way
+
+            //write video using p or wtv
+        for (let i = 0; i < 5; i++) {
+            console.log[i];
+          }
+            //console.log(response)
+    });
     }
 
     if(checkedBoxes.includes("exams")){
