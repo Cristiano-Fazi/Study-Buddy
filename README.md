@@ -7,7 +7,7 @@
    - Darcy Mazloum: Computer Science
 
 # 🎓 Project Overview
-Study buddy is designed to help people learn easier while also making the learning process more engaging. User can input a topic and recieve high quality video lessons, practice questions and previous exams for their chsoen topic. This allows users to quickly find great sources for both learning and practice, letting them hone their skills quickly and efficiently. In the future we plan to add features that would allow users to gain experience and 'level up' their knowledge!
+Study buddy is designed to help people learn easier while also making the learning process more engaging. Users can input a topic and receive high quality video lessons, practice questions and previous exams for their chosen topic. This allows users to quickly find great sources for both learning and practice, letting them hone their skills quickly and efficiently. In the future we plan to add features that would allow users to gain experience and 'level up' their knowledge!
 
 ## 💻 **App Overview**
 ### 📱**Mobile App Desgins**
@@ -22,4 +22,4 @@ Study buddy is designed to help people learn easier while also making the learni
 - Progression Chart: [Issue #19](https://github.com/Cristiano-Fazi/Study-Buddy/issues/19)
 
 ## 🧭 User Guide
-How to use the tool
+To use Study Buddy users must first naviagte to the search page. Once there, they can check off the types of materials they wish to recieve such as youtube videos, exams or practice problems. They can click on the provided links to view the given materials. As of now, that's all that's available but in the future users will be able to track their progress on subjects by marking videos, practice and exams as completed. Completed materials will add to users experience allowing them to level up in various subjects.
