@@ -43,3 +43,8 @@ slider.addEventListener('mouseleave', function () {
     tooltip.style.visibility = 'hidden';
   }
 });
+
+
+/*
+<input type="range" min="1" max="100" value="50"></input>
+*/
