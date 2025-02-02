@@ -3,8 +3,8 @@
 - **Team Members:**
 	- Cristiano Fazi : Software Engineering
 	- Alyssa Garofalo : Data Science
-	- Merill $LASTNAME: Computer Science
-   - Darcy $LASTNAME: Computer Science
+	- Merill Bobotis: Computer Science
+   - Darcy Mazloum: Computer Science
 
 # 🎓 Project Overview
 Study buddy is designed to help people learn easier while also making the learning process more engaging.
