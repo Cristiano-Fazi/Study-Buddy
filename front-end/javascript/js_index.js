@@ -33,7 +33,6 @@ vid_check.addEventListener('change', function()
         document.getElementById("vid_slide_num").textContent = vid_slider.value
         document.getElementById("vid_slide_num").style.display = "none"
     }
-    
 })
 
 function updateElementVisibility()

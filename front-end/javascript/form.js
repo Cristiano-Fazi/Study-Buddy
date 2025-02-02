@@ -30,11 +30,14 @@ document.getElementById("request").addEventListener("submit", function(event){
             //make a for loop to go through all the results and print them a certain way
 
             //write video using p or wtv
-        for (let i = 0; i < 5; i++) {
-            console.log[i];
-          }
+            for (let i = 0; i < 5; i++) {
+                console.log(response[i]);
+                let video_name = document.createElement("a");
+                
+
+            }
             //console.log(response)
-    });
+        });
     }
 
     if(checkedBoxes.includes("exams")){
