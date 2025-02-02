@@ -48,7 +48,7 @@ document.getElementById("request").addEventListener("submit", function(event){
             CSSContainerRule.appendChild(document.createElement("br"));
           }
             
-    });
+        });
     }
 //add like video, exams, lectures before eveything, put it in the if checkbox includes
     if(checkedBoxes.includes("exams")){
