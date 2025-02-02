@@ -33,7 +33,7 @@ document.getElementById("request").addEventListener("submit", function(event){
         resultsContainer.appendChild(vid);
         resultContainer.appendChild(document.createElement("br"));
 
-        fetchYouTubeVideos(info, year).then((response) =>{
+        fetchYouTubeVideos(info, year, 5, videoLength).then((response) =>{
             //make a for loop to go through all the results and print them a certain way
 
             //write video using p or wtv

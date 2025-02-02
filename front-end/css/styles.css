@@ -1,6 +1,6 @@
 /* Base Styles */
 body {
-    background-color: #4A5A40; /* Sage green background */
+    background-color: #484E3C; /* Sage green background */
     color: #FFFFFF;
     font-family: 'Press Start 2P', sans-serif; /* Pixelated font */
     margin: 0;
@@ -45,7 +45,7 @@ body {
 
 /* Main Layout */
 .container {
-    background-color: #2D2D2D; /* Dark gray background */
+    background-color: #202020; /* Dark gray background */
     width: 70%;
     margin: 150px auto;
     padding: 30px;
@@ -93,14 +93,15 @@ body {
 .query-box input[type="text"] {
     font-family: 'Courier New', monospace; /* Sets the font to Courier New */
     background-color: #000000; /* Light gray background color */
-    color: #333; /* Dark text color for contrast */
+    color: #039122; /* Dark text color for contrast */
     padding: 12px;
     font-size: 1rem; /* Adjust font size as needed */
     width: 90%; /* Adjust width as needed */
 }
 
-.query-box button, .query-box button:focus, .query-box button:hover {
+.query-box button, .query-box button:focus {
     font-family: 'Courier New', monospace; /* Directly applies Courier New to the button */
+    font-size: 20px;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -108,6 +109,10 @@ body {
     background-color: #4A5A40;
     color: rgb(255, 255, 255);
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+.query-box button:hover{
+    background-color: white; /* White background on hover */
+    color: #4A5A40; /* Sage green text on hover */
 }
 
 /* Mascot */
@@ -136,10 +141,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 10rem; /* Large text size */
+    font-size: 2rem; /* Large text size */
     color: rgba(0, 0, 0, 0.1); /* Light color for subtle effect */
     pointer-events: none; /* Ensures it doesn't interfere with clicks */
 }
+<<<<<<< HEAD
+
+
+.fixed-star img {
+    position: fixed;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    
+}
+
+=======
 
 .slider {
     width: 80%;
@@ -147,7 +163,7 @@ body {
     background: #06c98f;
     outline: none;
     opacity: 0.7;
-  }
+}
 
 /*
 
@@ -162,3 +178,4 @@ id = publish_date
 id = video_length
 
 */
+>>>>>>> 65463212a24eab97a748579ed751791d457f0066
