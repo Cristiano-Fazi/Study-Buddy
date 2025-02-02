@@ -80,7 +80,7 @@ def practice_endpoint(subject: str, years_ago: int, max_results: int):
 
     return study_fetch.search_practice_problems(subject=subject, years_ago=years_ago, max_results=max_results)
 
-# Text will be too long no?
+
 @app.get("/chat/{subject}")
 def ai_chat_endpoint(subject: str):
     """
