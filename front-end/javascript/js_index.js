@@ -64,8 +64,8 @@ checkboxes.forEach(checkbox => {
 });
 
 pub_slider.addEventListener("change", function() {
-    document.getElementById("pub_slide_num").textContent = "Max years since publication:" + this.value + "years"
+    document.getElementById("pub_slide_num").textContent = "Max years since publication:" + this.value + " years"
 })
 vid_slider.addEventListener("change", function() {
-    document.getElementById("vid_slide_num").textContent = "Max length of video: " + this.value + "minutes"
+    document.getElementById("vid_slide_num").textContent = "Max length of video: " + this.value + " minutes"
 })
