@@ -5,6 +5,8 @@
     "version": "0.2.0",
     "configurations": [
     
+=======
+>>>>>>> 65463212a24eab97a748579ed751791d457f0066
         {
             "type": "chrome",
             "request": "launch",
