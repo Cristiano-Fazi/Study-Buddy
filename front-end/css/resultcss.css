@@ -52,3 +52,21 @@
     font-family: 'Press Start 2P', sans-serif;
     font-size: 80%;
 }
+.fixed-star img {
+    left:-20px;
+    top:80px;
+    position: fixed;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    z-index:-1;
+    
+}
+.pixel-star img {
+    position: fixed;
+    right:0px;
+    bottom: 0px;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    z-index: -1;
+    
+}
