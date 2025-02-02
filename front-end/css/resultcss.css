@@ -24,6 +24,13 @@
     flex-direction: column; /* Stack elements vertically */
     justify-content: flex-start; /* Align items at the top */
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    max-height: 80vh; /* Prevents it from getting too big */
+    overflow-y: auto; /* Enables scrolling */
+
 }
 
 .result_container{
@@ -33,6 +40,12 @@
     width: 80%;  /* Adjust container width as needed */
     margin: 5px auto;  /* Centers the container */
     height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow-y: auto; /* Enables scrolling */
 }
 
 .AI_header{
