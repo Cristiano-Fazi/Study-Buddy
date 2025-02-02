@@ -13,8 +13,11 @@ Study buddy is designed to help people learn easier while also making the learni
 Screenshots/figma designs
 
 ## 🔜 Next Steps
-- User Accounts: [Issue #17](https://github.com/Cristiano-Fazi/Study-Buddy/issues/16)
-- Progression Chart (Showing strengths and weaknesses)
+- User Accounts: [Issue #16](https://github.com/Cristiano-Fazi/Study-Buddy/issues/16)
+- Mobile Friendly Application: [Issue #15](https://github.com/Cristiano-Fazi/Study-Buddy/issues/15)
+- Marking Videos/Practice as Completed: [Issue #17](https://github.com/Cristiano-Fazi/Study-Buddy/issues/17)
+- Specify School When Searching for Practice/Exams: [Issue #8](https://github.com/Cristiano-Fazi/Study-Buddy/issues/8)
+- Progression Chart: [Issue #19](https://github.com/Cristiano-Fazi/Study-Buddy/issues/19)
 
 ## 🧭 User Guide
 How to use the tool
