@@ -1,8 +1,9 @@
 from ollama import chat, ChatResponse, create, AsyncClient, pull
 import asyncio
+import re
 
-pull("deepseek-r1:7b")
-models = ['deepseek-r1:7b']
+# pull("deepseek-r1:7b")
+models = ['deepseek-r1:1.5b']
 current_chat = chat(models[0], messages=[])
 messages = [
     {
@@ -14,25 +15,12 @@ messages = [
 # This function strips the thinking off of the response.
 # This can be problematic if the thinking process includes </think> but I believe the model ignores that word and refuses to use it.
 def strip_thinking(text):
-    key = '</think>'
-    variable = ''
-    text_index = 0
 
-    # Goes through each character in the text from the start.
-    # Variable slowly gains characters so long as they match the key.
-    # If variable does not match the key as it is being built then it must mean we are not at </think>
-    # If key == variable it means we have found the word </think> and must be at the end of the thinking.
-    # Strip all the characters behind that index.
-    for char in text:
-        variable += char
-        if key[:len(variable)] != variable:
-            variable = ''
-        if key == variable:
-            text_index += 1
-            return text[text_index:]
+    index = re.search('</think>', text)
+    new_text = text[index.start() + 8:]
 
     # If we get to the end return text, this should never happen.
-    return text
+    return new_text
 
 def gen_ai_call(subject):
     response = chat(
@@ -49,6 +37,8 @@ def gen_ai_call(subject):
     to_return = {
         'content' : strip_thinking(response['message']['content']),
     }
+
+    print(to_return['content'])
 
     return to_return
 
@@ -74,12 +64,12 @@ async def gen_ai_call_async(subject):
 
 
 
-def gen_ai_loop(model):
+def gen_ai_loop():
     while True:
         # "What would you like to ask the generative AI model? To quit type /quit \n"
-        message = input()
+        message = input("What would you like to ask the generative AI model? To quit type /quit \n")
         if message == '/quit':
             break
-        gen_ai_call(model, message)
+        gen_ai_call(message)
 
-# gen_ai_loop(models[0])
+# gen_ai_loop()
