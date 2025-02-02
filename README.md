@@ -7,7 +7,7 @@
    - Darcy Mazloum: Computer Science
 
 # 🎓 Project Overview
-Study buddy is designed to help people learn easier while also making the learning process more engaging.
+Study buddy is designed to help people learn easier while also making the learning process more engaging. User can input a topic and recieve high quality video lessons, practice questions and previous exams for their chsoen topic. This allows users to quickly find great sources for both learning and practice, letting them hone their skills quickly and efficiently. In the future we plan to add features that would allow users to gain experience and 'level up' their knowledge!
 
 ## 💻 **App Overview**
 ### 📱**Mobile App Desgins**
