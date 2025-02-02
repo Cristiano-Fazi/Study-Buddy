@@ -70,6 +70,10 @@ a:link, a:visited{
     color: #C6B8F9;
 }
 
+a:hover{
+    color: white;
+}
+
 .header .title a{
     text-decoration: none;
 }
