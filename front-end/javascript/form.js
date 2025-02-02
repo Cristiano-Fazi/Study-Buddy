@@ -26,7 +26,7 @@ document.getElementById("request").addEventListener("submit", function(event){
     console.log(info);
 
     if(checkedBoxes.includes("video")){
-        fetchYouTubeVideos(subject=info, YearsAgo=year, maxResults=5, video_length=videoLength).then((response) =>
+        fetchYouTubeVideos(info, year, 5, videoLength).then((response) =>
             //Alyssa Code
             console.log(response)
         );
