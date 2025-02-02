@@ -1,4 +1,4 @@
-import { fetchYouTubeVideos, fetchPracticeProblems, fetchPreviousExams } from '../services/data-service.js';
+import { fetchYouTubeVideos, fetchPracticeProblems, fetchPreviousExams, fetchAIResponse } from '../services/data-service.js';
 
 document.addEventListener("DOMContentLoaded", function () {
     const checkedBoxes = JSON.parse(localStorage.getItem("checkedBoxes")) || [];
@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (checkedBoxes.includes("practice-problems")) {
-
         fetchPracticeProblems(info, year).then((response) => {
             let practice_problems = document.createElement("h3");
         practice_problems.textContent = "Practice Problems";
@@ -61,4 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    console.log("Chat were in")
+    fetchAIResponse(info).then((response) => {
+        console.log(response);
+        console.log("Chat we out")
+    });
 });
