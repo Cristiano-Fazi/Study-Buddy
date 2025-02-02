@@ -37,7 +37,7 @@ def strip_thinking(text):
     # If we get to the end return text, this should never happen.
     return text
 
-def gen_ai_call(text):
+def gen_ai_call(subject):
 
     response = chat(
         models[0],
@@ -45,7 +45,7 @@ def gen_ai_call(text):
         [
             {
                 'role': 'user', 
-                'content': text
+                'content': "Please breifly explain the following subject:" + subject
             }
         ],
     )

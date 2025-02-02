@@ -96,8 +96,7 @@ body {
     color: #333; /* Dark text color for contrast */
     padding: 12px;
     font-size: 1rem; /* Adjust font size as needed */
-    margin-right: 5px;
-    width: 650px; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
 }
 
 .query-box button, .query-box button:focus, .query-box button:hover {
@@ -110,7 +109,6 @@ body {
     color: rgb(255, 255, 255);
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
-
 
 /* Mascot */
 .mascot {
