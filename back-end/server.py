@@ -40,8 +40,21 @@ def youtube_endpoint(subject: str, years_ago: int):
     
     return study_fetch.search_youtube(subject=subject, years_ago=years_ago)
 
-@app.get("/youtube/{subject}/{years_ago}/{max_results}/")
-def youtube_endpoint(subject: str, years_ago: int, max_results: int):
+@app.get("/youtube/{subject}/{years_ago}/{video_length}/")
+def youtube_endpoint(subject: str, years_ago: int, video_length: int):
+    """
+    Endpoint to search YouTube videos by subject.
+    - `subject`: Subject of video to search for.
+    - `video_length`: Length of the video to search for in minutes.
+    - `years_ago`: Max amount of years ago the video could have been published.
+    """
+    if years_ago is not None and years_ago < 0:
+        return {"error": "years_ago must be a positive integer or null"}
+    
+    return study_fetch.search_youtube(subject=subject, years_ago=years_ago, video_length=video_length)
+
+@app.get("/youtube/{subject}/{years_ago}/{video_length}/{max_results}/")
+def youtube_endpoint(subject: str, years_ago: int, video_length: int, max_results: int):
     """
     Endpoint to search YouTube videos by subject.
     - `subject`: Subject of video to search for.
@@ -54,7 +67,7 @@ def youtube_endpoint(subject: str, years_ago: int, max_results: int):
     if max_results is not None and max_results < 0:
         return {"error": "max_results must be a positive integer or null"}
     
-    return study_fetch.search_youtube(subject=subject, years_ago=years_ago, max_results=max_results)
+    return study_fetch.search_youtube(subject=subject, years_ago=years_ago, max_results=max_results, video_length=video_length)
 
 @app.get("/practice/{subject}/")
 def practice_endpoint(subject: str):
