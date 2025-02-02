@@ -10,7 +10,9 @@
 Study buddy is designed to help people learn easier while also making the learning process more engaging.
 
 ## 💻 **App Overview**
-Screenshots/figma designs
+### 📱**Mobile App Desgins**
+![image](https://github.com/user-attachments/assets/97352785-6ef2-4160-a9ab-1020409ac45b)
+![image](https://github.com/user-attachments/assets/2b10a95a-f961-4615-9a8d-f2122824c7ca)
 
 ## 🔜 Next Steps
 - User Accounts: [Issue #16](https://github.com/Cristiano-Fazi/Study-Buddy/issues/16)
