@@ -1,0 +1,81 @@
+/* Container Styling */
+.learning-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling for the options (checkboxes) */
+  .learning-options {
+    margin-bottom: 20px;
+  }
+  
+  .learning-options label {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+  
+  .learning-options input {
+    margin-right: 5px;
+  }
+  
+  /* Slider Container Styling */
+  .slider-wrapper {
+    position: relative;
+    visibility: hidden; /* Initially hidden */
+    margin-top: 20px;
+  }
+  
+  /* Slider Styling */
+  #slider-range {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+  }
+  
+  /* Tooltip Styling */
+  #slider-tooltip {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    visibility: hidden; /* Initially hidden */
+  }
+  
+  /* Year Display Styling */
+  #year-display {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Query Box Styling */
+  .query-input-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .query-input-box input {
+    padding: 8px;
+    font-size: 16px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .query-input-box button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .query-input-box button:hover {
+    background-color: #45a049;
+  }
