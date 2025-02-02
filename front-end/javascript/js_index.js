@@ -48,10 +48,12 @@ function updateElementVisibility()
         document.getElementById("pub_slide_num").style.display = "none"
     }
     if (vid_check.checked) {
+        vid_slider.style.display = 'block'
         document.getElementById("vid_slide_num").style.display = "block"
         document.getElementById("vid_slide_num").textContent = "Max length of video: " + vid_slider.value + " minutes"
     }
     else {
+        vid_slider.style.display = 'none'
         document.getElementById("vid_slide_num").textContent = "Max length of video: " + vid_slider.value + " minutes"
         document.getElementById("vid_slide_num").style.display = "none"
     }
