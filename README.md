@@ -1,8 +1,8 @@
 ## 🌟 **Team Information**
 - **Team Name:** Princess Sleep
 - **Team Members:**
-	- Cristiano Fazi : Software Engineering
-	- Alyssa Garofalo : Data Science
+	- Cristiano Fazi: Software Engineering
+	- Alyssa Garofalo: Data Science
 	- Merill Bobotis: Computer Science
    - Darcy Mazloum: Computer Science
 
@@ -22,4 +22,4 @@ Study buddy is designed to help people learn easier while also making the learni
 - Progression Chart: [Issue #19](https://github.com/Cristiano-Fazi/Study-Buddy/issues/19)
 
 ## 🧭 User Guide
-To use Study Buddy users must first naviagte to the search page. Once there, they can check off the types of materials they wish to recieve such as youtube videos, exams or practice problems. They can click on the provided links to view the given materials. As of now, that's all that's available but in the future users will be able to track their progress on subjects by marking videos, practice and exams as completed. Completed materials will add to users experience allowing them to level up in various subjects.
+To use Study Buddy users must first navigate to the search page. Once there, they can check off the types of materials they wish to receive such as youtube videos, exams or practice problems. They can click on the provided links to view the given materials. As of now, that's all that's available but in the future users will be able to track their progress on subjects by marking videos, practice and exams as completed. Completed materials will add to users' experience allowing them to level up in various subjects.
