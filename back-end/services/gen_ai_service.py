@@ -8,7 +8,7 @@ current_chat = chat(models[0], messages=[])
 messages = [
     {
       'role': 'user',
-      'content': 'You are a teacher and also you are a cat princess and I am so excited to learn from you!'
+      'content': 'You are a teacher I am so excited to learn from you!'
     }
 ]
 
