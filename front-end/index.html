@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,12 +25,16 @@
     </div>
 
     <!-- Main Content -->
-    <form class="ressources_form"></form>
+
+    <form id="request">
+
     <div class="container">
         <div class="options">
             <label>
                 <input type="checkbox" name="learning-option" id="videos">
-                <!--video_length-->
+
+                <input type="range" min="1" max="100" value="50" class="slider" id="publish_date"></input>
+
                 videos
             </label>
             <label>
@@ -40,7 +45,9 @@
                 <input type="checkbox" name="learning-option" id="lecture-notes">
                 lecture notes
             </label>
-            <!--publish_date-->
+
+            <input type="range" min="1" max="100" value="50" class="slider" id="video_length"></input>
+
         </div>
        <!-- Query Box -->
        <div class="query-box">
@@ -48,12 +55,14 @@
         <button type="submit">Search</button>
        </div>
 
-        <input type="range" min="1" max="100" value="50" class="slider" id="publish_date"></input>
-        <input type="range" min="1" max="100" value="50" class="slider" id="video_length"></input>
+        
+        
+        </div>
     </form>
 
         
     </div>
+    <script src="javascript/form.js"></script>
 </body>
-<script src="javascript/js_index.js"></script>
+
 </html>
