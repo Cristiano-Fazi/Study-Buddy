@@ -122,3 +122,19 @@ body {
     border: 5px solid black;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
+.fixed-star img {
+    position: fixed;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    z-index:-1;
+    
+}
+.pixel-star img {
+    position: fixed;
+    right:0px;
+    bottom: 0px;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    z-index: -1;
+    
+}
