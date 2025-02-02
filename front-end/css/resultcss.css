@@ -1,0 +1,41 @@
+.form_result{
+    background-color: #2D2D2D; /* Dark gray background */
+    width: 70%;
+    margin: 90px auto;
+    padding: 30px;
+    border-radius: 0px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 3px solid black;
+}
+
+.AI_result{
+    background-color: #2D2D2D; /* Dark gray background */
+    width: 30%;
+    margin: 90px auto;
+    padding: 30px;
+    border-radius: 0px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 3px solid black;
+    display: flex; /* Make the container a flex container */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items at the top */
+
+}
+
+.result_container{
+    display: flex;  /* Align items horizontally */
+    justify-content: space-between;  /* Optional: Adds space between items */
+    gap: 20px;  /* Optional: Adds space between items */
+    width: 80%;  /* Adjust container width as needed */
+    margin: 5px auto;  /* Centers the container */
+    height: 90vh;
+}
+
+.AI_header{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 80%;
+}
