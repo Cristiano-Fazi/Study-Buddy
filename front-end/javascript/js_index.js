@@ -19,14 +19,19 @@ const lect_note_check = document.getElementById("lecture_notes")
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
+updateElementVisibility()
 
 vid_check.addEventListener('change', function()
 {
     if (this.checked) {
-        vid_slider.style.display = 'block' // I think block is how to do it
+        vid_slider.style.display = 'block'
+        document.getElementById("vid_slide_num").style.display = "block"
+        document.getElementById("vid_slide_num").textContent = vid_slider.value
     }
     else {
         vid_slider.style.display = 'none'
+        document.getElementById("vid_slide_num").textContent = vid_slider.value
+        document.getElementById("vid_slide_num").style.display = "none"
     }
     
 })
@@ -36,11 +41,30 @@ function updateElementVisibility()
     const isAnyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked)
     if (isAnyChecked) {
         pub_slider.style.display = "block";
+        document.getElementById("pub_slide_num").style.display = "block"
+        document.getElementById("pub_slide_num").textContent = pub_slider.value
     } else {
         pub_slider.style.display = "none";
+        document.getElementById("pub_slide_num").textContent = pub_slider.value
+        document.getElementById("pub_slide_num").style.display = "none"
+    }
+    if (vid_check.checked) {
+        document.getElementById("vid_slide_num").style.display = "block"
+        document.getElementById("vid_slide_num").textContent = vid_slider.value
+    }
+    else {
+        document.getElementById("vid_slide_num").textContent = vid_slider.value
+        document.getElementById("vid_slide_num").style.display = "none"
     }
 }
 
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener("change", updateElementVisibility);
 });
+
+pub_slider.addEventListener("change", function() {
+    document.getElementById("pub_slide_num").textContent = this.value
+})
+vid_slider.addEventListener("change", function() {
+    document.getElementById("vid_slide_num").textContent = this.value
+})
