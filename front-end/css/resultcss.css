@@ -1,5 +1,5 @@
 .form_result{
-    background-color: #2D2D2D; /* Dark gray background */
+    background-color: #2D2D2D; 
     width: 70%;
     margin: 90px auto;
     padding: 30px;
@@ -7,8 +7,25 @@
     text-align: left;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     position: relative;
-    border: 3px solid black;
+    border: 3px solid black; 
+
+    display: flex;  /* Align items horizontally */
+    justify-content: space-between;  /* Optional: Adds space between items */
+    gap: 20px;  /* Optional: Adds space between items */
+    width: 80%;  /* Adjust container width as needed */
+    margin: 5px auto;  /* Centers the container */
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow-y: auto; /* Enables scrolling */
+
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
+
 
 .AI_result{
     background-color: #2D2D2D; /* Dark gray background */
@@ -34,21 +51,29 @@
 }
 
 .result_container{
-    display: flex;  /* Align items horizontally */
-    justify-content: space-between;  /* Optional: Adds space between items */
-    gap: 20px;  /* Optional: Adds space between items */
-    width: 80%;  /* Adjust container width as needed */
-    margin: 5px auto;  /* Centers the container */
-    height: 90vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    overflow-y: auto; /* Enables scrolling */
+    display: flex;  /* Places children (form_result & AI_result) side by side */
+    justify-content: space-between; /* Adds space between them */
+    align-items: flex-start; /* Aligns items at the top */
+    width: 90%; /* Adjust width as needed */
+    margin: auto; /* Centers the container */
+    gap: 20px; /* Adds spacing between elements */
 }
+
+
 
 .AI_header{
     font-family: 'Press Start 2P', sans-serif;
     font-size: 80%;
+}
+
+a:link, a:visited{
+    color: #C6B8F9;
+}
+
+.header .title a{
+    text-decoration: none;
+}
+
+body {
+    overflow: hidden; /* Prevents both vertical and horizontal scrolling */
 }

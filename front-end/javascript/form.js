@@ -1,7 +1,32 @@
 import { fetchYouTubeVideos, fetchPracticeProblems, fetchPreviousExams } from '../services/data-service.js';
 
+
+document.getElementById("request").addEventListener("submit", function(event){
+    event.preventDefault(); // Stop default behavior
+
+    let checkedBoxes = [];
+    if (document.getElementById("videos").checked) checkedBoxes.push("video");
+    if (document.getElementById("exams").checked) checkedBoxes.push("exams");
+    if (document.getElementById("practice-problems").checked) checkedBoxes.push("practice-problems");
+
+    let videoLength = document.getElementById("video_length").value;
+    let year = document.getElementById("publish_date").value;
+    let info = document.getElementById("search").value;
+
+    // Store form data in localStorage
+    localStorage.setItem("checkedBoxes", JSON.stringify(checkedBoxes));
+    localStorage.setItem("videoLength", videoLength);
+    localStorage.setItem("year", year);
+    localStorage.setItem("info", info);
+
+    // Redirect to the results page
+    window.location.href = "/front-end/result.html";
+});
+
+/*
 document.getElementById("request").addEventListener("submit", function(event){
     event.preventDefault();
+    
     let checkedBoxes = [];
 
     if(document.getElementById("videos").checked){
@@ -17,7 +42,7 @@ document.getElementById("request").addEventListener("submit", function(event){
     //slidebar values if applicable
     let videoLength = /*document.getElementById("video_slide").style.display === "block" ? */ document.getElementById("video_length").value /*: "N/A"*/;
     let year = /*document.getElementById("publish_slide").style.display === "block" ? */ document.getElementById("publish_date").value /*: "N/A"*/;
-
+/*
     let info = document.getElementById("search").value;
 
     console.log(videoLength);
@@ -102,3 +127,4 @@ document.getElementById("request").addEventListener("submit", function(event){
         );
     }
 })
+*/
