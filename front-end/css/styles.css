@@ -145,7 +145,6 @@ body {
     color: rgba(0, 0, 0, 0.1); /* Light color for subtle effect */
     pointer-events: none; /* Ensures it doesn't interfere with clicks */
 }
-<<<<<<< HEAD
 
 
 .fixed-star img {
@@ -154,8 +153,6 @@ body {
     height: auto;
     
 }
-
-=======
 
 .slider {
     width: 80%;
@@ -178,4 +175,3 @@ id = publish_date
 id = video_length
 
 */
->>>>>>> 65463212a24eab97a748579ed751791d457f0066
