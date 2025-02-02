@@ -49,8 +49,27 @@ class StudyFetchService:
         return results
 
     def search_practice_problems(self, subject: str,years_ago: int = DEFAULT_YEARS_AGO, max_results: int = DEFAULT_RESULTS):
+        query = f"{subject} (practice problems OR exercises) filetype:pdf site:.edu OR site:khanacademy.org OR site:ocw.mit.edu"
+        
+        # Google Custom Search API URL
+        url = f"https://www.googleapis.com/customsearch/v1?q={query}&key={GOOGLE_API_KEY}&cx={SEARCH_ENGINE_ID}&num={max_results}&lr=lang_en"
+
+        # Execute the API request
+        response = requests.get(url).json()
+
+        # Extract relevant results
+        return [
+            {
+                "title": item.get("title"),
+                "url": item.get("link"),
+                "snippet": item.get("snippet"),
+            }
+            for item in response.get("items", [])
+        ]
+
+    def search_exams(self, subject: str,years_ago: int = DEFAULT_YEARS_AGO, max_results: int = DEFAULT_RESULTS):
         # Search query: Includes subject, problem types, and filters for PDFs & educational sites
-        query = f"{subject} (practice problems OR exercises OR midterm OR exam OR past paper) filetype:pdf site:.edu OR site:khanacademy.org OR site:ocw.mit.edu"
+        query = f"{subject} (previous midterm exams OR final exams OR practice exams) filetype:pdf site:.edu OR site:khanacademy.org OR site:ocw.mit.edu"
         
         # Google Custom Search API URL
         url = f"https://www.googleapis.com/customsearch/v1?q={query}&key={GOOGLE_API_KEY}&cx={SEARCH_ENGINE_ID}&num={max_results}&lr=lang_en"
