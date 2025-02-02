@@ -160,6 +160,15 @@ body {
     height: auto;
     
 }
+.pixel-star img {
+    position: fixed;
+    right:0px;
+    bottom: 0px;
+    width: 500px; /* Fixed size for stars */
+    height: auto;
+    z-index: -1;
+    
+}
 
 
 .slider {
