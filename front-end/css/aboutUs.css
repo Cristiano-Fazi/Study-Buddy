@@ -140,3 +140,10 @@ body {
     z-index: -1;
     
 }
+.cat-icon {
+    position: fixed;
+    right: 0;    
+    bottom: 0;  
+    width: 100px;  
+    height: auto;  
+}
